@@ -14,16 +14,12 @@ app = FastAPI()
 db.generate_mapping(create_tables=True)
 
 
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://nutrifa.netlify.app",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    # Permitimos todas las origins para simplificar el despliegue
+    # (el frontend usa tokens Bearer en cabeceras, no cookies).
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
