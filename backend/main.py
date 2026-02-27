@@ -17,6 +17,7 @@ db.generate_mapping(create_tables=True)
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://nutrifa.netlify.app",
 ]
 
 app.add_middleware(
@@ -33,13 +34,14 @@ from src.controllers.settings_controller import router as settings_router
 from src.controllers.food_controller import router as food_router
 from src.controllers.dashboard_controller import router as dashboard_router
 from src.controllers.meal_controller import router as meal_router
+from src.controllers.health_controller import router as health_router
 
 app.include_router(usuario_router)
 app.include_router(settings_router)
 app.include_router(food_router)
 app.include_router(dashboard_router)
 app.include_router(meal_router)
-
+app.include_router(health_router)
 
 # Personalizar el esquema de seguridad en OpenAPI para usar Bearer tokens
 _HTTP_METHODS = ("get", "post", "put", "delete", "patch", "head", "options", "trace")
