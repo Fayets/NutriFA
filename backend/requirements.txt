@@ -8,3 +8,4 @@ python-jose[cryptography]
 python-multipart
 pytest
 requests
+psycopg2-binary
