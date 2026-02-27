@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+# Se recomienda usar Pony ORM con Python <= 3.11
+pony>=0.7.17
+python-decouple
+bcrypt
+python-jose[cryptography]
+python-multipart
+pytest
+requests
